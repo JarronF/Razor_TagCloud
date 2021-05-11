@@ -1,0 +1,28 @@
+﻿@page
+@model Razor_TagCloud.Pages.IndexModel
+@using Razor_TagCloud.Data;
+@{
+}
+
+<div>
+    <h2>What is in the collection?</h2>
+    @foreach (Tags tag in Model.Tags)
+    {
+        <ul>
+            <li>@tag.Tag - @tag.Count - @tag.HTMLStyle</li>
+        </ul>
+    }
+</div>
+
+
+<div>
+    <h2>Tag Cloud:</h2>
+    <div style="width: 300px;justify-content: center;background-color:aliceblue;">
+
+        @foreach (Tags tag in Model.Tags)
+        {
+            <span style="font-size:@(tag.HTMLStyle);">@tag.Tag</span>
+        }
+    </div>
+
+</div>
